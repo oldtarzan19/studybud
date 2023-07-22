@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . import proba
+from .models import Room
 
 # Create your views here.
 
@@ -10,14 +10,13 @@ rooms = [
 ]
 
 def home(request):
+    rooms = Room.objects.all()
     context = {'rooms': rooms}
     return render(request, 'base/home.html', context)
 
 
 def room(request, pk):
-    szam = proba.hatvanyozas(int(pk))
-
-    room = None
+    room = Room.objects.get(id=pk)
     for i in rooms:
         if i['id'] == int(pk):
             room = i
@@ -30,4 +29,3 @@ def room(request, pk):
 
     return render(request, 'base/home.html')
 
-# https://www.youtube.com/watch?v=PtQiiknWUcI 1:04:10
