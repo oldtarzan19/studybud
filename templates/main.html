@@ -5,19 +5,19 @@
     <title>StudyBud</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
+{% include 'navbar.html' %}
 
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
             <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
 
 
-    {% block content %}
+{% block content %}
 
-    {% endblock %}
+{% endblock %}
 </body>
 </html>
