@@ -25,9 +25,11 @@
                     <div class="profile__about">
                         <h3>About</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo tenetur
-                            facilis sunt nemo debitis quisquam hic atque aut? Ducimus alias placeat optio
-                            accusamus repudiandae quis ab ex exercitationem rem?
+                            {% if user.bio %}
+                            {{ user.bio }}
+                            {% else %}
+                            This user has not added a bio yet.
+                            {% endif %}
                         </p>
                     </div>
                 </div>
