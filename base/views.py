@@ -204,3 +204,6 @@ def activityPage(request):
     room_messages = Message.objects.all()
     context = {'room_messages': room_messages}
     return render(request, 'base/activity.html', context)
+
+
+# DB delete Video 7:10:00
